@@ -17,7 +17,14 @@ class pointsController {
         .distinct()
         .select("points.*")
 
-        return res.json(point)
+        const serializedPoints = point.map(point => {
+            return {
+                ...point,
+                image_url: `http://10.0.0.119:3333/uploads/${point.image}`
+            }
+        })
+
+        return res.json(serializedPoints)
 
     }
 
@@ -30,16 +37,23 @@ class pointsController {
             return res.status(400).json({message: "point not found"})
         }
 
+        const serializedPoint = {
+                ...point,
+                image_url: `http://10.0.0.119:3333/uploads/${point.image}`
+            }
+
         const items = await knex("items")
         .join("point_items", "items.id", "=", "point_items.item_id")
         .where("point_items.point_id", id)
         .select("items.title")
 
-        return res.json({point, items})
+        return res.json({serializedPoint, items})
 
     }
     
     async create (req: Request, res: Response){
+        
+        
         const {
         name,
         email,
@@ -54,7 +68,7 @@ class pointsController {
         const trx = await knex.transaction() //se 1 insert n da certo, ele cancela o outro
 
         const point = {
-        image: "https://images.unsplash.com/photo-1556767576-5ec41e3239ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+        image: req.file.filename,
         name,
         email,
         whatsapp,
@@ -68,7 +82,10 @@ class pointsController {
 
         const point_id = idsPoint[0]
 
-        const pointItems = items.map((item_id: number) => {
+        //trim tira os espacos
+        const pointItems = items.split(",")
+        .map((item: string) => Number(item.trim()))
+        .map((item_id: number) => {
                 return {
                         item_id,
                         point_id,
