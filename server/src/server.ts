@@ -3,6 +3,8 @@ import rota from "./routes"
 import path from "path"
 import cors from "cors"
 import { errors } from "celebrate"
+import 'dotenv/config'
+
 
 const app = express()
 

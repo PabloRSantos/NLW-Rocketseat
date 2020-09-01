@@ -40,6 +40,9 @@ const Points = () => {
     const routeParams = route.params as Params
 
     useEffect(() => {
+      if(selectedItems.length < 1)
+        return setPoints([])
+
       api.get("points", {
         params: {
           city: routeParams.city,

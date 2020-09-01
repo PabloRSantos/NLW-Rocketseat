@@ -8,6 +8,8 @@
   align-items: center;
   margin-top: 48px;
   outline: 0;
+
+  cursor: pointer;
 }
 
 .dropzone img {

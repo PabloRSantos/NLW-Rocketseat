@@ -2,6 +2,7 @@ import React from "react"
 import "./styles.css"
 import logo from "../../assets/logo.svg"
 import { Link } from "react-router-dom"
+import { FiLogIn } from 'react-icons/fi';
 
 const Home = () => {
 
@@ -16,6 +17,7 @@ const Home = () => {
                     <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
                     <Link to="/create-point">
                         <span>
+                            <FiLogIn />
                         </span>
                         <strong>Cadastre um ponto de coleta</strong>
                     </Link>

@@ -9,6 +9,7 @@ class pointsController {
         .split(",")
         .map(item => Number(item.trim()))
 
+
         const point = await knex("points")
         .join("point_items", "points.id", "=", "point_items.point_id")
         .whereIn("point_items.item_id", parsedItems)
@@ -17,10 +18,14 @@ class pointsController {
         .distinct()
         .select("points.*")
 
+
         const serializedPoints = point.map(point => {
             return {
                 ...point,
-                image_url: `http://10.0.0.119:3333/uploads/${point.image}`
+                latitude: Number(point.latitude),
+                longitude: Number(point.longitude),
+                image_url: `http://10.0.0.106:3333/uploads/${point.image}`
+                
             }
         })
 
@@ -39,7 +44,7 @@ class pointsController {
 
         const serializedPoint = {
                 ...point,
-                image_url: `http://10.0.0.119:3333/uploads/${point.image}`
+                image_url: `http://10.0.0.106:3333/uploads/${point.image}`
             }
 
         const items = await knex("items")
@@ -47,7 +52,7 @@ class pointsController {
         .where("point_items.point_id", id)
         .select("items.title")
 
-        return res.json({serializedPoint, items})
+        return res.json({point: serializedPoint, items})
 
     }
     
@@ -78,7 +83,7 @@ class pointsController {
         uf
     }
 
-        const idsPoint = await trx("points").insert(point)
+        const idsPoint = await trx("points").insert(point).returning('id')
 
         const point_id = idsPoint[0]
 

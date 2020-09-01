@@ -37,6 +37,7 @@ const Detail = () => {
     useEffect(() => {
         api.get(`points/${routeParams.point_id}`)
         .then(response => setData(response.data))
+
     }, [])
 
 
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       padding: 32,
-      paddingTop: 20,
+      paddingTop: 35,
     },
   
     pointImage: {
@@ -158,7 +159,6 @@ const styles = StyleSheet.create({
       borderTopWidth: StyleSheet.hairlineWidth,
       borderColor: '#999',
       paddingVertical: 20,
-      paddingBottom: 0,
       paddingHorizontal: 32,
       flexDirection: 'row',
       justifyContent: 'space-between'

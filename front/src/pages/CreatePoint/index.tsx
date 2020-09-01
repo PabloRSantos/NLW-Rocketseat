@@ -46,6 +46,7 @@ const CreatePoint = () => {
         api.get("items")
         .then(response => 
             setItems(response.data))
+
     }, [])
 
     useEffect(() => {
@@ -96,7 +97,7 @@ const CreatePoint = () => {
     }
 
     function handleSelectItem(id: number){
-        const alreadySelected = selectedItems.findIndex(item => item == id)
+        const alreadySelected = selectedItems.findIndex(item => item === id)
 
         if(alreadySelected >= 0){
             const fileredItems = selectedItems.filter(item => item !== id)
