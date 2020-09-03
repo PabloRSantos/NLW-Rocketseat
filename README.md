@@ -145,9 +145,6 @@ Depois leia o QRCode com seu app [expo](https://play.google.com/store/apps/detai
 
 As aulas foram ministradas pelo mestre **[Diego Fernandes](https://github.com/diego3g)** nas aulas da **Next Level Week**.
 
-## :memo: License
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 ---
 
