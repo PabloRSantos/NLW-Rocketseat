@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/Ecoleta-NLW 1.0-0080000?"></img>
   </a>
 
-  <a href="https://github.com/RafaelGoulartB/proffy/commits/master">
+  <a href="https://github.com/PabloRSantos/proffy/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PabloRSantos/Ecoleta?color=0080000">
 </p>
 
