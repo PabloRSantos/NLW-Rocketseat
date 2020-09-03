@@ -75,7 +75,7 @@ const Home = () => {
                 <Picker.Item key={uf} label={uf} value={uf} />
               ))}
             </Picker>
-
+            
             <Picker
               style={styles.input}
               selectedValue={selectedCity}
@@ -86,6 +86,7 @@ const Home = () => {
               ))}
             </Picker>
 
+        </View>
 
             <RectButton style={styles.button} onPress={handleNavigateToPoints}>
                 <View style={styles.buttonIcon}>
@@ -95,7 +96,6 @@ const Home = () => {
                 </View>       
                 <Text style={styles.buttonText}>Entrar</Text>
             </RectButton>
-        </View>
 
     </ImageBackground>
     </KeyboardAvoidingView>

@@ -1,12 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "name": "Ecoleta",
+    "slug": "Ecoleta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,6 +16,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "com.pablo.ecoleta"
+    },
     "ios": {
       "supportsTablet": true
     }
