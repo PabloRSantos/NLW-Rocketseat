@@ -17,7 +17,13 @@
       "**/*"
     ],
     "android": {
-      "package": "com.pablo.ecoleta"
+      "package": "com.pablo.ecoleta",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyD2sFRxNYMTb3Ne-oDxhNvhDDoLCKW_ZzA"
+        }
+      }
     },
     "ios": {
       "supportsTablet": true
