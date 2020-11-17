@@ -16,7 +16,7 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PabloRSantos/Ecoleta?color=0080000">
 </p>
 
-> :rocket: Projeto feito para conectar professores e estudantes, feito na NLW #1 @Rocketseat
+> :rocket: Projeto feito na semana do meio ambiente na NLW #1 @Rocketseat
 
 
 <div align="center">
